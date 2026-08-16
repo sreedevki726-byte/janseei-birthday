@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Janseeii ❤️</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Georgia, "Times New Roman", serif;
+  background:#120b12;color:#fff;overflow-x:hidden;
+}
+.bg{position:fixed;inset:0;z-index:-2;background:
+ radial-gradient(circle at 20% 20%,#7d294f55,transparent 30%),
+ radial-gradient(circle at 80% 80%,#ff789944,transparent 28%),
+ linear-gradient(135deg,#100910,#26101d 55%,#100910);}
+.noise{position:fixed;inset:0;z-index:-1;opacity:.08;pointer-events:none;
+background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");}
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px 20px;position:relative}
+.hero-inner{max-width:700px}
+.kicker{letter-spacing:5px;text-transform:uppercase;font-size:11px;opacity:.7;margin-bottom:22px}
+h1{font-size:clamp(54px,16vw,120px);line-height:.9;font-weight:400;font-style:italic}
+.name{background:linear-gradient(90deg,#fff,#ffb6ce,#fff);-webkit-background-clip:text;color:transparent}
+.subtitle{font-size:clamp(18px,5vw,30px);margin-top:25px}
+.heart{font-size:32px;animation:pulse 1.4s infinite}
+@keyframes pulse{50%{transform:scale(1.18)}}
+.btn{margin-top:38px;border:1px solid #ffffff55;background:#ffffff12;color:white;padding:15px 28px;border-radius:999px;font-size:15px;cursor:pointer;backdrop-filter:blur(10px);transition:.3s}
+.btn:hover{background:#fff;color:#1b0c15;transform:translateY(-2px)}
+.scroll{position:absolute;bottom:22px;font-size:11px;letter-spacing:3px;opacity:.55}
+section{padding:90px 20px;max-width:1050px;margin:auto}
+.section-title{text-align:center;font-size:34px;font-weight:400;font-style:italic;margin-bottom:45px}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{overflow:hidden;border-radius:20px;background:#ffffff0d;box-shadow:0 20px 50px #0005}
+.card:nth-child(3){grid-column:span 2}
+.card img{width:100%;height:100%;min-height:260px;object-fit:cover;display:block;transition:transform .7s}
+.card:hover img{transform:scale(1.045)}
+.message{max-width:720px;margin:auto;text-align:center;padding:45px 25px;border:1px solid #ffffff18;border-radius:30px;background:#ffffff09;backdrop-filter:blur(12px)}
+.message p{font-size:20px;line-height:1.8}
+.signature{margin-top:30px;font-style:italic;color:#ffb5ca;font-size:22px}
+.final{text-align:center;min-height:80vh;display:flex;flex-direction:column;justify-content:center}
+.final h2{font-size:clamp(42px,11vw,80px);font-weight:400;font-style:italic}
+.final p{margin-top:22px;font-size:18px;opacity:.8}
+footer{text-align:center;padding:25px;opacity:.45;font-size:12px}
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:10;overflow:hidden}
+.confetti i{position:absolute;top:-20px;width:7px;height:14px;border-radius:2px;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+#gate{position:fixed;inset:0;z-index:20;background:#100910;display:flex;align-items:center;justify-content:center;text-align:center;padding:25px;transition:opacity .8s}
+.gate-box{max-width:430px}
+.gate-box .tiny{letter-spacing:4px;text-transform:uppercase;font-size:10px;opacity:.55}
+.gate-box h2{font-size:44px;font-weight:400;font-style:italic;margin:20px 0}
+.gate-box p{opacity:.7;line-height:1.7}
+@media(max-width:600px){
+ section{padding:70px 16px}
+ .gallery{gap:9px}
+ .card{border-radius:14px}
+ .card img{min-height:210px}
+ .message p{font-size:17px}
+}
+</style>
+</head>
+<body>
+<div class="bg"></div><div class="noise"></div>
+
+<div id="gate">
+  <div class="gate-box">
+    <div class="tiny">a little surprise for you</div>
+    <h2>Janseeii ❤️</h2>
+    <p>Tap below. There's something waiting for you.</p>
+    <button class="btn" onclick="openSite()">Open your surprise ✨</button>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="kicker">today is all about you</div>
+    <h1><span class="name">Janseeii</span></h1>
+    <div class="heart">♡</div>
+    <div class="subtitle">Happy Birthday babe ❤️</div>
+    <button class="btn" onclick="document.getElementById('memories').scrollIntoView()">Our little memories ↓</button>
+  </div>
+  <div class="scroll">SCROLL SLOWLY</div>
+</div>
+
+<section id="memories">
+  <div class="section-title">Some moments I want to keep forever.</div>
+  <div class="gallery">
+    <div class="card"><img src="images/photo1.jpg" alt="Memory 1"></div>
+    <div class="card"><img src="images/photo2.jpg" alt="Memory 2"></div>
+    <div class="card"><img src="images/photo3.jpg" alt="Memory 3"></div>
+    <div class="card"><img src="images/photo4.jpg" alt="Memory 4"></div>
+    <div class="card"><img src="images/photo5.jpg" alt="Memory 5"></div>
+  </div>
+</section>
+
+<section>
+  <div class="message">
+    <div class="section-title">For you, Janseeii ♡</div>
+    <p>
+      Happy Birthday babe ❤️<br><br>
+      I hope this new year of your life brings you everything
+      you've been wishing for — more smiles, more adventures,
+      more beautiful memories and all the happiness you deserve.
+      <br><br>
+      And yes… I hope we get to make a lot more ridiculous,
+      cute and unforgettable memories together. 🥹❤️
+    </p>
+    <div class="signature">— with love, always</div>
+  </div>
+</section>
+
+<section class="final">
+  <h2>Happy Birthday,<br>Janseeii ❤️</h2>
+  <p>Here's to another chapter of us. ✨</p>
+  <button class="btn" onclick="celebrate()">One more surprise 🎉</button>
+</section>
+
+<footer>made with ❤️ just for Janseeii</footer>
+<div class="confetti" id="confetti"></div>
+
+<script>
+function openSite(){
+  const gate=document.getElementById('gate');
+  gate.style.opacity='0';
+  setTimeout(()=>gate.remove(),800);
+  celebrate();
+}
+function celebrate(){
+  const box=document.getElementById('confetti');
+  for(let i=0;i<90;i++){
+    const x=document.createElement('i');
+    x.style.left=Math.random()*100+'%';
+    x.style.animationDuration=(2.5+Math.random()*3)+'s';
+    x.style.animationDelay=Math.random()*.7+'s';
+    x.style.transform='rotate('+Math.random()*360+'deg)';
+    x.style.background=['#ffb6ce','#ffd6e4','#ffffff','#f4a6c1','#dca0ff'][Math.floor(Math.random()*5)];
+    box.appendChild(x);
+    setTimeout(()=>x.remove(),6500);
+  }
+}
+</script>
+</body>
+</html>
