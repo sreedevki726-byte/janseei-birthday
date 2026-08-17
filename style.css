@@ -459,3 +459,44 @@ h3 {
     }
 
 }
+/* FINAL PHOTO SIZE FIX */
+
+.photo-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    max-width: 360px !important;
+    margin: 0 auto !important;
+}
+
+.photo-card {
+    width: 125px !important;
+    max-width: 125px !important;
+    padding: 4px 4px 15px !important;
+}
+
+.photo-card:nth-child(5) {
+    width: 125px !important;
+    max-width: 125px !important;
+    grid-column: auto !important;
+}
+
+.photo-card img {
+    width: 117px !important;
+    height: 145px !important;
+    object-fit: cover !important;
+}
+
+@media (max-width: 500px) {
+    .photo-grid {
+        max-width: 290px !important;
+        gap: 10px !important;
+    }
+
+    .photo-card,
+    .photo-card:nth-child(5) {
+        width: 125px !important;
+        max-width: 125px !important;
+    }
+}
