@@ -1,21 +1,471 @@
-/* FINAL PHOTO SIZE FIX */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 50% 20%, #5b163f, #21091c 45%, #07030a 100%);
+    color: #fff;
+    font-family: Georgia, serif;
+    overflow-x: hidden;
+}
+
+/* OPENING */
+
+.intro {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.top-heart {
+    font-size: 55px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.tiny {
+    margin-top: 25px;
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: #e9a7c8;
+}
+
+h1 {
+    margin-top: 15px;
+    font-size: clamp(55px, 15vw, 100px);
+    background: linear-gradient(90deg, #ff80bc, #fff, #ff80bc);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shine 3s linear infinite;
+    text-shadow: 0 0 35px rgba(255, 100, 190, .25);
+}
+
+.question {
+    margin-top: 15px;
+    font-size: 22px;
+    line-height: 1.6;
+    color: #f8dbe9;
+}
+
+.question span {
+    color: #ff9dcc;
+    font-size: 26px;
+}
+
+.gift {
+    font-size: 75px;
+    margin: 30px 0 10px;
+    animation: floating 2.5s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(255, 120, 190, .4));
+}
+
+.wait {
+    color: #b998aa;
+    font-size: 14px;
+}
+
+#startBtn {
+    margin-top: 30px;
+    padding: 17px 30px;
+    border: 1px solid #ff9dcc;
+    border-radius: 50px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 80, 170, .35),
+        rgba(120, 20, 90, .35)
+    );
+    color: white;
+    font-size: 17px;
+    font-family: inherit;
+    box-shadow: 0 0 30px rgba(255, 80, 170, .25);
+    cursor: pointer;
+    animation: buttonGlow 2s infinite;
+}
+
+#startBtn:active {
+    transform: scale(.95);
+}
+
+.secret {
+    margin-top: 18px;
+    color: #806576;
+    font-size: 12px;
+}
+
+
+/* MESSAGE */
+
+#content {
+    display: none;
+    padding: 55px 18px 100px;
+    animation: reveal 1.5s ease;
+}
+
+.celebration {
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: 5px;
+}
+
+.birthday-label {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #d99cbe;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 12px;
+    font-size: clamp(34px, 9vw, 58px);
+    line-height: 1.2;
+}
+
+h2 span {
+    display: block;
+    color: #ff9dcc;
+    margin-top: 5px;
+}
+
+.divider {
+    text-align: center;
+    color: #d97eac;
+    margin: 25px 0;
+}
+
+.card {
+    max-width: 700px;
+    margin: auto;
+    padding: 35px 25px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, .07);
+    border: 1px solid rgba(255, 160, 205, .25);
+    box-shadow:
+        0 0 60px rgba(255, 60, 160, .12),
+        inset 0 0 40px rgba(255,255,255,.025);
+    backdrop-filter: blur(15px);
+}
+
+.cake {
+    text-align: center;
+    font-size: 65px;
+    animation: floating 3s ease-in-out infinite;
+}
+
+h3 {
+    text-align: center;
+    margin: 15px 0 30px;
+    color: #ffb0d3;
+    font-size: 30px;
+}
+
+.message {
+    font-size: 17px;
+    line-height: 1.9;
+    color: #f5e7ee;
+}
+
+.message p {
+    margin-bottom: 22px;
+}
+
+.message b {
+    color: #ff9dcc;
+}
+
+.love {
+    text-align: center;
+    color: #ffacd1;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 35px;
+    color: #cbaabc;
+    font-style: italic;
+}
+
+.signature span {
+    color: #ff9dcc;
+    font-size: 21px;
+}
+
+
+/* ENDING */
+
+.ending {
+    text-align: center;
+    margin: 70px auto 0;
+    max-width: 500px;
+}
+
+.ending p {
+    color: #bda0b0;
+    margin-bottom: 15px;
+}
+
+.ending div {
+    font-size: 45px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.ending strong {
+    display: block;
+    font-size: 25px;
+    color: #ffafd2;
+}
+
+.forever {
+    margin-top: 10px;
+}
+
+
+/* FLOATING HEARTS */
+
+.heart {
+    position: fixed;
+    bottom: -40px;
+    z-index: 20;
+    pointer-events: none;
+    animation: floatUp linear forwards;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 200%;
+    }
+}
+
+@keyframes buttonGlow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 80, 170, .2);
+    }
+
+    50% {
+        box-shadow: 0 0 35px rgba(255, 80, 170, .5);
+    }
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .card {
+        padding: 28px 20px;
+    }
+
+    .message {
+        font-size: 16px;
+    }
+}
+@keyframes confettiFall {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+
+/* MEMORIES */
+
+.memories {
+    max-width: 650px;
+    margin: 75px auto 0;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.memory-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #d99cbe;
+}
+
+.memory-title {
+    margin: 10px 0 6px;
+    font-size: 34px;
+    color: #ffacd1;
+}
+
+.memory-text {
+    color: #cbaabc;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* PHOTO COLLAGE */
 
 .photo-grid {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 10px !important;
-    max-width: 290px !important;
-    margin: 0 auto !important;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    align-items: center;
+    justify-items: center;
 }
 
 .photo-card {
-    width: 125px !important;
-    max-width: 125px !important;
-    padding: 4px 4px 15px !important;
+    width: 100%;
+    max-width: 230px;
+    padding: 7px 7px 22px;
+    background: rgba(255, 245, 250, .94);
+    border-radius: 4px;
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, .35),
+        0 0 20px rgba(255, 100, 180, .18);
+    position: relative;
+    transition: transform .35s ease;
+}
+
+.photo-card:nth-child(1) {
+    transform: rotate(-3deg);
+}
+
+.photo-card:nth-child(2) {
+    transform: rotate(3deg);
+}
+
+.photo-card:nth-child(3) {
+    transform: rotate(2deg);
+}
+
+.photo-card:nth-child(4) {
+    transform: rotate(-3deg);
 }
 
 .photo-card:nth-child(5) {
+    grid-column: 1 / -1;
+    transform: rotate(-1deg);
+    max-width: 230px;
+}
+
+.photo-card:hover {
+    transform: rotate(0deg) scale(1.04);
+    z-index: 5;
+}
+
+.photo-card img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-card span {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+}
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+    .memories {
+        margin-top: 65px;
+    }
+
+    .photo-grid {
+        gap: 14px;
+    }
+
+.photo-card {
+    width: 125px;
+    max-width: 125px;
+    padding: 4px 4px 15px;
+}
+
+.photo-card:nth-child(5) {
+    width: 125px;
+    max-width: 125px;
+}
+
+.photo-card img {
+    height: 145px;
+}
+    .memory-title {
+        font-size: 30px;
+    }
+
+}
+/* PHOTO SIZE FIX */
+.photo-grid {
+    max-width: 290px !important;
+    gap: 10px !important;
+}
+
+.photo-card {
     width: 125px !important;
     max-width: 125px !important;
 }
@@ -24,26 +474,4 @@
     width: 117px !important;
     height: 145px !important;
     object-fit: cover !important;
-}
-
-.memory-title {
-    font-size: 30px;
-}
-
-@media (max-width: 500px) {
-    .photo-grid {
-        max-width: 290px !important;
-        gap: 10px !important;
-    }
-
-    .photo-card,
-    .photo-card:nth-child(5) {
-        width: 125px !important;
-        max-width: 125px !important;
-    }
-
-    .photo-card img {
-        width: 117px !important;
-        height: 145px !important;
-    }
 }
